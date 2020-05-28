@@ -71,8 +71,6 @@ export default class CreateExercise extends Component{
         console.log(exercise)
 
         axios.post("https://belendor.herokuapp.com/exercises/add", exercise).then(x => console.log(x.data))
-
-        window.location = "/"
     }
 
     render(){

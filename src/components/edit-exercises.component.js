@@ -82,7 +82,6 @@ export default class EditExercise extends Component{
 
         axios.post("https://belendor.herokuapp.com/exercises/update/" + this.props.match.params.id, exercise).then(x => console.log(x.data))
 
-        window.location = "/"
     }
 
     render(){
