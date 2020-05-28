@@ -24,7 +24,7 @@ export default class CreateExercise extends Component{
     }
 
     componentDidMount(){
-       axios.get("http://localhost:5000/users").then(response => {
+       axios.get("https://belendor.herokuapp.com/users").then(response => {
            if(response.data.length > 0){
             this.setState({
                 username: response.data[0].username,
@@ -70,7 +70,7 @@ export default class CreateExercise extends Component{
         
         console.log(exercise)
 
-        axios.post("http://localhost:5000/exercises/add", exercise).then(x => console.log(x.data))
+        axios.post("https://belendor.herokuapp.com/exercises/add", exercise).then(x => console.log(x.data))
 
         window.location = "/"
     }

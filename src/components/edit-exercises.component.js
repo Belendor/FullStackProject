@@ -24,7 +24,7 @@ export default class EditExercise extends Component{
     }
 
     componentDidMount(){
-        axios.get("http://localhost:5000/exercises/" + this.props.match.params.id).then(response =>{
+        axios.get("https://belendor.herokuapp.com/exercises/" + this.props.match.params.id).then(response =>{
             this.setState({
                 username: response.data.username,
                 describtion: response.data.describtion,
@@ -35,7 +35,7 @@ export default class EditExercise extends Component{
         )
 
 
-       axios.get("http://localhost:5000/users/").then(response => {
+       axios.get("https://belendor.herokuapp.com/users/").then(response => {
            if(response.data.length > 0){
             this.setState({
                 users: response.data.map(user => {
@@ -80,7 +80,7 @@ export default class EditExercise extends Component{
         
         console.log(exercise)
 
-        axios.post("http://localhost:5000/exercises/update/" + this.props.match.params.id, exercise).then(x => console.log(x.data))
+        axios.post("https://belendor.herokuapp.com/exercises/update/" + this.props.match.params.id, exercise).then(x => console.log(x.data))
 
         window.location = "/"
     }

@@ -28,7 +28,7 @@ export default class ExercisesList extends Component{
     }
 
     componentDidMount(){
-        axios.get("http://localhost:5000/exercises/").then(response =>{
+        axios.get("https://belendor.herokuapp.com/exercises/").then(response =>{
             this.setState({
             exercises : response.data
             })
@@ -40,7 +40,7 @@ export default class ExercisesList extends Component{
     deleteExercise(id){
         console.log("delete initiated key: ", id);
         
-        axios.delete("http://localhost:5000/exercises/" + id).then(res=> console.log(res.data)
+        axios.delete("https://belendor.herokuapp.com/exercises/" + id).then(res=> console.log(res.data)
         )
         this.setState(
             {

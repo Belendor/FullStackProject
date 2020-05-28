@@ -27,7 +27,7 @@ export default class CreateUser extends Component {
     };
     console.log(user);
 
-    axios.post("http://localhost:5000/users/add", user).then(result => console.log(result.data))
+    axios.post("https://belendor.herokuapp.com/users/add", user).then(result => console.log(result.data))
 
     this.setState({ username: "" });
   }
